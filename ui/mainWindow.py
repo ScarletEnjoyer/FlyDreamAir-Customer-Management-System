@@ -11,13 +11,16 @@ from api.loginApi import is_admin
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('')
+        self.setWindowTitle('FlyDreamAir Management')
         self.setGeometry(0, 0, 800, 600)
         self.setFixedSize(800, 600)
         self.move_to_center()
         self.setObjectName('main_window')
-        self.setStyleSheet('QMainWindow#main_window{background-color:white}')
+        self.setStyleSheet('QMainWindow#main_window{background-color:white}'
+                           'QStackedWidget#main_stacked_widget {border-image: url(background.png); background-size: cover;}')
         self.stacked_widget = QStackedWidget(self)
+        self.stacked_widget.setObjectName('main_stacked_widget')
+        # self.stacked_widget.setStyleSheet(f"QStackedWidget {{background-image: url(22.png); background-size: cover;}}")
         self.setCentralWidget(self.stacked_widget)
         self.display_login_page()
 
